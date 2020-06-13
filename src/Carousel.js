@@ -8,6 +8,7 @@ class Carousel extends React.Component {
 
   // derived state helps us weed out what we dont need and only use what we need
   static getDerivedStateFromProps({ media }) {
+    console.log(media);
     let photos = ["http://placecorgi.com/600/600"];
 
     if (media.length) {
@@ -28,7 +29,7 @@ class Carousel extends React.Component {
     const { photos, active } = this.state;
     return (
       <div className="carousel">
-        <img src={photos} alt="animal" />
+        <img src={photos[active]} alt="animal" />
         <div className="carousel-smaller">
           {photos.map((photo, index) => (
             // eslint-disable-next-line
